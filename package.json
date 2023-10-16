@@ -1,6 +1,6 @@
 {
   "name": "@sion908/yaml-to-environ",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,10 @@
   },
   "author": "sion908 <sionn908@gmail.com> (https://sion908.github.io/sion908/)",
   "license": "MIT",
-  "dependencies": {
+  "bin": {
+    "yte": "index"
+  },
+  "devdependencies": {
     "commander": "^11.1.0",
     "fs-extra": "^11.1.1",
     "js-yaml": "^4.1.0"
