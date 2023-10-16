@@ -1,0 +1,54 @@
+const fs = require('fs');
+const yaml = require('js-yaml');
+const fsExtra = require('fs-extra');
+
+const program = require('commander');
+
+program
+  .version(JSON.parse(require('fs').readFileSync(
+    require.main.filename.match(/^(.+)\/.+$/)[1] + '/package.json')).version)
+    .option('-i --input-file <fileName>',
+            'input file .env.yaml',
+            '.env.yaml')
+    .option('-o --output-file <fileName>',
+            'output file .env',
+            '.env')
+    .option('-e --environ <environ>',
+            'select env default local',
+            'local')
+    .usage('[options] <yaml file ...>')
+    .parse();
+
+const options = program.opts();
+
+const yamlFilePath = options.inputFile;
+const envFilePath = options.outputFile;
+const environ = options.environ;
+
+// 既存の .env ファイルを削除
+if (fs.existsSync(envFilePath)) {
+  fs.unlinkSync(envFilePath);
+}
+  
+const yamlContent = fs.readFileSync(yamlFilePath, 'utf8');
+const data = yaml.load(yamlContent);
+
+const envData = [];
+
+for (const key in data) {
+if (typeof data[key] === 'object') {
+  const keys =  Object.keys(data[key]);
+  if (keys.includes(environ)) {
+    envData.push(`${key}=${data[key][environ]}`);
+  } else if (keys.includes("default")) {
+    envData.push(`${key}=${data[key]["default"]}`);
+  }
+} else {
+  envData.push(`${key}=${data[key]}`);
+}
+}
+
+fs.writeFileSync(envFilePath, envData.join('\n'), 'utf8');
+  
+//   console.log('.env ファイルが生成されました:');
+//   console.log(envData.join('\n'));
