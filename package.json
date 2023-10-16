@@ -1,6 +1,6 @@
 {
   "name": "@sion908/yaml-to-environ",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "bin": {
     "yaml-to-environ": "index"
   },
-  "devdependencies": {
+  "dependencies": {
     "commander": "^11.1.0",
     "fs-extra": "^11.1.1",
     "js-yaml": "^4.1.0"
