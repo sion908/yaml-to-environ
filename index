@@ -47,7 +47,7 @@ if (typeof data[key] === 'object') {
     envData.push(`${key}=${data[key]["default"]}`);
   }
 } else {
-  envData.push(`${key}=${data[key]}`);
+  envData.push(`${key}="${data[key]}"`);
 }
 }
 
