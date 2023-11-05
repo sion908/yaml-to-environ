@@ -19,7 +19,7 @@ program
     .option('-e --environ <environ>',
             'select env default local',
             'local')
-    .usage('[options] <yaml file ...>')
+    .usage('{options}')
     .parse();
 
 const options = program.opts();
