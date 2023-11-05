@@ -1,13 +1,23 @@
 {
   "name": "@sion908/yaml-to-environ",
   "version": "1.1.0",
-  "description": "",
+  "description": "create .env file from .env.yaml",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint index"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sion908/yaml-to-environ.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sion908/yaml-to-environ/issues"
+  },
+  
+  "keywords": ["yaml","env","staging"],
   "author": "sion908 <sionn908@gmail.com> (https://sion908.github.io/sion908/)",
+  "homepage": "https://sion908.github.io/sion908/",
   "license": "MIT",
   "bin": {
     "yaml-to-environ": "index"
