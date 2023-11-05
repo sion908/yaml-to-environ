@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint index"
   },
   "author": "sion908 <sionn908@gmail.com> (https://sion908.github.io/sion908/)",
   "license": "MIT",
@@ -17,6 +18,7 @@
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
+    "eslint": "^8.53.0",
     "jest": "^29.7.0"
   }
 }
