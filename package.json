@@ -1,6 +1,6 @@
 {
   "name": "@sion908/yaml-to-environ",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "create .env file from .env.yaml",
   "main": "index.js",
   "scripts": {
