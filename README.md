@@ -1,4 +1,5 @@
 # yaml-to-environ
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 ## 概要
 AWS cdkなどのために環境ごとに環境変数のyamlを作った場合に,これをdockerの環境で実行したい時に、指定した環境のために`.env`を切り出す。
